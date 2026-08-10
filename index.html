@@ -1,299 +1,196 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>晨曦茶會麻將大賽｜主視覺活動頁</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晨曦茶會｜夏日公會活動</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
 :root{
-  --bg:#070506;--wine:#4c1018;--wine2:#821f2d;--gold:#d9ad55;--gold2:#fff0b2;
-  --ivory:#fff6e4;--muted:#c8b08a;--line:rgba(255,228,160,.38)
+  --sky:#bfefff; --aqua:#6ed9ef; --blue:#2baed4; --deep:#0f638b; --navy:#06344f;
+  --white:#f8fdff; --glass:rgba(255,255,255,.22); --line:rgba(255,255,255,.52);
+  --shadow:rgba(10,90,130,.22); --pink:#ff91b8; --red:#f35b6f;
 }
 *{box-sizing:border-box;scroll-behavior:smooth}
 body{
-  margin:0;font-family:"Noto Serif TC","Microsoft JhengHei",serif;color:var(--ivory);
-  background:radial-gradient(circle at 50% 0%,rgba(130,31,45,.55),transparent 34rem),linear-gradient(#070506,#17080c 45%,#070506)
+  margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--navy);
+  background:
+    radial-gradient(circle at 12% 10%,rgba(255,255,255,.95),transparent 18rem),
+    radial-gradient(circle at 86% 18%,rgba(255,255,255,.65),transparent 18rem),
+    linear-gradient(180deg,#d8f7ff 0%,#9de9f7 35%,#5bcfe8 70%,#bfefff 100%);
+  min-height:100vh;
 }
 nav{
-  position:sticky;top:0;z-index:10;height:64px;padding:0 7vw;display:flex;justify-content:space-between;align-items:center;
-  background:rgba(7,5,6,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)
+  position:sticky;top:0;z-index:20;height:68px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(238,251,255,.68);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.7)
 }
-nav b{color:var(--gold2);letter-spacing:.18em}
-nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:14px}
-.hero{min-height:780px;display:grid;place-items:center;padding:44px 18px 70px;position:relative;overflow:hidden}
-.hero:before{
-  content:"";position:absolute;inset:0;background:
-  radial-gradient(circle at 50% 45%,rgba(255,226,160,.13),transparent 24rem),
-  linear-gradient(90deg,transparent 8%,rgba(255,226,160,.08) 8.1%,transparent 8.3% 91.7%,rgba(255,226,160,.08) 91.9%,transparent 92.1%)
+nav b{color:var(--deep);letter-spacing:.14em;font-size:18px}
+nav a{color:var(--deep);text-decoration:none;margin-left:22px;font-size:14px;font-weight:700}
+.hero{min-height:760px;padding:60px 20px 90px;display:grid;place-items:center;position:relative;overflow:hidden}
+.bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.95),rgba(255,255,255,.16) 48%,rgba(56,184,219,.1) 72%);border:1px solid rgba(255,255,255,.65);box-shadow:0 10px 35px rgba(47,153,193,.16)}
+.b1{width:90px;height:90px;left:8vw;top:130px}.b2{width:44px;height:44px;left:20vw;bottom:120px}.b3{width:115px;height:115px;right:8vw;top:170px}.b4{width:58px;height:58px;right:21vw;bottom:110px}
+.hero-card{
+  position:relative;z-index:2;width:min(1180px,100%);padding:78px 40px 64px;text-align:center;
+  border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.34),rgba(255,255,255,.14));
+  backdrop-filter:blur(24px);box-shadow:0 34px 90px var(--shadow);border-radius:36px;overflow:hidden
 }
-.poster{
-  position:relative;width:min(1600px,100vw);aspect-ratio:16/9;border:1px solid var(--line);
-  background:#12080b;box-shadow:0 35px 100px rgba(0,0,0,.55);overflow:hidden
+.hero-card::before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.48);border-radius:28px;pointer-events:none}
+.hero-tag{color:var(--deep);font-weight:900;letter-spacing:.34em;font-size:13px}
+.hero h1{margin:14px 0 6px;font-family:"Noto Serif TC",serif;font-size:clamp(62px,10vw,138px);line-height:1;letter-spacing:.08em;color:#fff;text-shadow:0 5px 0 rgba(42,174,212,.28),0 12px 36px rgba(11,107,145,.25)}
+.hero h1 span{display:block;color:#e9fbff}
+.hero-sub{margin:24px auto 0;color:var(--deep);font-size:21px;line-height:1.9;font-weight:700}
+.date-pill{display:inline-flex;gap:18px;align-items:center;margin-top:30px;padding:14px 26px;border-radius:999px;background:rgba(255,255,255,.52);border:1px solid rgba(255,255,255,.8);color:var(--deep);font-weight:900;box-shadow:0 10px 30px rgba(47,153,193,.14)}
+.hero-actions{margin-top:34px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;min-width:190px;padding:15px 28px;border-radius:999px;text-decoration:none;font-weight:900;letter-spacing:.08em;transition:.25s ease;cursor:pointer}
+.btn-primary{color:white;background:linear-gradient(135deg,#34b7d9,#0c7ea9);box-shadow:0 12px 28px rgba(14,122,166,.28);border:1px solid rgba(255,255,255,.6)}
+.btn-secondary{color:var(--deep);background:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.8)}
+.btn:hover{transform:translateY(-3px)}
+main{width:min(1180px,calc(100% - 36px));margin:0 auto 90px}
+.overview{margin-top:-52px;position:relative;z-index:5;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.overview article,.section{background:rgba(255,255,255,.30);border:1px solid rgba(255,255,255,.72);backdrop-filter:blur(22px);box-shadow:0 24px 62px rgba(12,106,145,.16)}
+.overview article{padding:28px;border-radius:26px}
+.overview small,.section-head small{display:block;color:#3186a6;letter-spacing:.30em;font-weight:900;margin-bottom:8px}
+.overview strong{display:block;font-size:26px;color:var(--deep);margin-bottom:6px}
+.overview span{color:#316d86}
+.section{margin:58px 0;padding:46px;border-radius:32px;position:relative;overflow:hidden}
+.section-head{margin-bottom:30px;position:relative;z-index:2}
+.section-head h2{margin:0;color:var(--deep);font-family:"Noto Serif TC",serif;font-size:44px;letter-spacing:.08em}
+.mahjong-grid,.singing,.love-grid{display:grid;gap:22px}.mahjong-grid,.singing{grid-template-columns:1.05fr .95fr}.love-grid{grid-template-columns:repeat(3,1fr)}
+.event-card,.love-grid article{padding:30px;border-radius:24px;background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.8)}
+.event-card h3,.love-grid h3{margin:0 0 16px;color:var(--deep);font-size:26px}
+.event-card p,.event-card li,.love-grid p{color:#2d6982;line-height:1.9;font-size:17px}
+.event-card ul{margin:0;padding-left:1.2em}
+.reward-box{margin-top:18px;padding:18px 20px;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(134,229,248,.34));border:1px solid rgba(255,255,255,.82)}
+.reward-box b{display:block;color:var(--deep);margin-bottom:6px}
+.players{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.players div{min-height:64px;display:flex;align-items:center;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.46);border:1px solid rgba(255,255,255,.78);color:var(--deep);font-weight:700}
+.players em{font-style:normal;min-width:34px;color:#2895ba;margin-right:10px;font-weight:900}
+.icon-block{min-height:240px;display:grid;place-items:center;text-align:center;border-radius:24px;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.75),transparent 11rem),linear-gradient(145deg,rgba(255,255,255,.34),rgba(67,191,225,.18));border:1px solid rgba(255,255,255,.75)}
+.icon-block .emoji{font-size:84px;margin-bottom:10px}.icon-block strong{display:block;color:var(--deep);font-size:28px}
+.love-theme{background:radial-gradient(circle at 88% 10%,rgba(255,153,188,.20),transparent 14rem),rgba(255,255,255,.30)}
+.love-theme .section-head h2,.love-grid h3{color:#9d4266}.love-grid p{color:#75566a}
+.color-dots{display:flex;gap:12px;margin-top:18px}.dot{width:42px;height:42px;border-radius:50%;border:3px solid rgba(255,255,255,.9);box-shadow:0 8px 20px rgba(100,50,80,.18)}.dot.pink{background:var(--pink)}.dot.red{background:var(--red)}
+.form-panel{text-align:center;padding:44px 26px}.form-panel p{color:#2d6982;font-size:17px;line-height:1.8}.form-note{margin-top:18px;color:#45849d;font-size:14px}
+footer{padding:70px 20px 90px;text-align:center;color:#2c7290}footer strong{display:block;margin-top:8px;color:var(--deep);font-size:24px}
+@media(max-width:880px){
+  nav div{display:none}.hero{min-height:auto;padding-top:36px}.hero-card{padding:58px 20px 46px}
+  .overview,.mahjong-grid,.singing,.love-grid{grid-template-columns:1fr}.players{grid-template-columns:repeat(2,1fr)}
+  .section{padding:30px 20px}.section-head h2{font-size:34px}
 }
-.poster svg{display:block;width:100%;height:100%}
-.poster-caption{
-  text-align:center;margin-top:26px;color:var(--muted);font-size:20px;line-height:1.8
-}
-main{width:min(1400px,calc(100% - 36px));margin:0 auto}
-.info{
-  margin-top:-45px;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--line);background:rgba(10,7,8,.92);box-shadow:0 24px 80px rgba(0,0,0,.45)
-}
-.info div{padding:26px 22px;border-right:1px solid var(--line)}
-.info div:last-child{border-right:0}
-.info small{display:block;color:var(--gold);letter-spacing:.24em;margin-bottom:10px}
-.info strong{display:block;color:var(--gold2);font-size:26px;margin-bottom:6px}
-.info span{color:var(--muted)}
-section{
-  margin:58px 0;padding:42px;border:1px solid var(--line);
-  background:linear-gradient(145deg,rgba(18,12,13,.9),rgba(46,20,22,.74));box-shadow:0 16px 52px rgba(0,0,0,.28)
-}
-.section-title{text-align:center;margin-bottom:30px}
-.section-title small{display:block;color:var(--gold);letter-spacing:.32em;margin-bottom:8px}
-h2{margin:0;color:var(--gold2);font-size:42px;letter-spacing:.12em}
-.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.countdown div{text-align:center;padding:25px 12px;border:1px solid rgba(255,228,160,.28);background:rgba(255,255,255,.04)}
-.countdown b{display:block;color:var(--gold2);font-size:58px}.countdown span{color:var(--muted)}
-.rules,.players,.ranking{display:grid;gap:18px}
-.rules{grid-template-columns:repeat(3,1fr)}
-.rules article,.rank{padding:28px;border:1px solid rgba(255,228,160,.28);background:rgba(255,255,255,.035);min-height:210px}
-.rules h3{color:var(--gold2);font-size:28px;margin:0 0 12px}.rules p{color:var(--muted);line-height:1.8}.rules b{color:var(--gold)}
-.players{grid-template-columns:repeat(4,1fr)}
-.players div{padding:17px;border:1px solid rgba(255,228,160,.24);background:linear-gradient(90deg,rgba(255,228,160,.1),rgba(255,255,255,.03))}
-.players em{font-style:normal;color:var(--gold);margin-right:12px}
-.timeline{position:relative;padding-left:32px}
-.timeline:before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--gold),transparent)}
-.item{position:relative;display:grid;grid-template-columns:100px 150px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,228,160,.16)}
-.item:last-child{border-bottom:0}.item:before{content:"";position:absolute;left:-31px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--gold2);box-shadow:0 0 16px var(--gold)}
-.item b{color:var(--gold2);font-size:22px}.item strong{font-size:20px}.item span{color:var(--muted)}
-.ranking{grid-template-columns:1.3fr 1fr 1fr 1fr}.rank{text-align:center;display:grid;place-items:center}.rank small{color:var(--gold)}.rank b{font-size:34px;color:var(--gold2)}.rank span{color:var(--muted)}
-footer{text-align:center;padding:70px 20px;border-top:1px solid var(--line);color:var(--muted)}footer strong{display:block;color:var(--gold2);font-size:25px}
-
-.apply-section{
-  margin:58px 0 0;
-  padding:0;
-  border:0;
-  background:transparent;
-  box-shadow:none;
-  text-align:center;
-}
-.apply-btn{
-  display:inline-block;
-  min-width:260px;
-  padding:18px 58px;
-  color:#1c0c07;
-  text-decoration:none;
-  font-size:24px;
-  font-weight:900;
-  letter-spacing:.16em;
-  border:2px solid #fff0b2;
-  background:linear-gradient(135deg,#fff4c8,#d9ad55 55%,#a96d24);
-  box-shadow:0 0 34px rgba(255,228,160,.38),0 16px 38px rgba(0,0,0,.35);
-  transition:.25s ease;
-}
-.apply-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 0 48px rgba(255,228,160,.58),0 20px 48px rgba(0,0,0,.42);
-}
-
-@media(max-width:860px){
-  nav div{display:none}.hero{min-height:auto}.poster{aspect-ratio:3/4}
-  .info,.countdown,.rules,.players,.ranking{grid-template-columns:1fr}.info div{border-right:0;border-bottom:1px solid var(--line)}
-  section{padding:28px 20px}.item{grid-template-columns:1fr;gap:8px}h2{font-size:32px}
-}
+@media(max-width:520px){.players{grid-template-columns:1fr}.date-pill{flex-direction:column;gap:4px}}
 </style>
 </head>
 <body>
 <nav>
-  <b>晨曦茶會麻將大賽</b>
-  <div><a href="#info">活動資訊</a><a href="#players">名單</a><a href="#schedule">賽程</a><a href="#ranking">獎勵</a></div>
+  <b>晨曦茶會｜SUMMER EVENT</b>
+  <div>
+    <a href="#mahjong">麻將大賽</a>
+    <a href="#singing">DC 唱歌</a>
+    <a href="#love">七夕活動</a>
+    <a href="#players">參賽名單</a>
+  </div>
 </nav>
 
 <header class="hero">
-  <div>
-    <div class="poster" aria-label="晨曦茶會麻將大賽活動主視覺">
-      <svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img">
-        <defs>
-          <radialGradient id="moon" cx="45%" cy="35%" r="65%">
-            <stop offset="0" stop-color="#fff8d6"/>
-            <stop offset=".45" stop-color="#f0c86f"/>
-            <stop offset="1" stop-color="#8d3b2b"/>
-          </radialGradient>
-          <radialGradient id="glow" cx="50%" cy="42%" r="60%">
-            <stop offset="0" stop-color="#ffe8a0" stop-opacity=".35"/>
-            <stop offset=".45" stop-color="#9b2630" stop-opacity=".25"/>
-            <stop offset="1" stop-color="#090506" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#18080d"/>
-            <stop offset=".48" stop-color="#4d1019"/>
-            <stop offset="1" stop-color="#080506"/>
-          </linearGradient>
-          <linearGradient id="gold" x1="0" x2="1">
-            <stop offset="0" stop-color="#8c5a1d"/>
-            <stop offset=".5" stop-color="#fff0b2"/>
-            <stop offset="1" stop-color="#b77a2b"/>
-          </linearGradient>
-          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".55"/>
-          </filter>
-        </defs>
-
-        <rect width="1600" height="900" fill="url(#bg)"/>
-        <rect width="1600" height="900" fill="url(#glow)"/>
-
-        <g opacity=".16">
-          <path d="M120 120H1480V780H120Z" fill="none" stroke="#ffe8a0" stroke-width="2"/>
-          <path d="M160 160H1440V740H160Z" fill="none" stroke="#ffe8a0" stroke-width="1"/>
-          <circle cx="800" cy="450" r="355" fill="none" stroke="#ffe8a0" stroke-width="2"/>
-          <circle cx="800" cy="450" r="275" fill="none" stroke="#ffe8a0" stroke-width="1"/>
-        </g>
-
-        <circle cx="800" cy="425" r="235" fill="url(#moon)" opacity=".18"/>
-        <g opacity=".18" stroke="#ffe8a0">
-          <line x1="800" y1="110" x2="800" y2="790"/>
-          <line x1="460" y1="450" x2="1140" y2="450"/>
-          <text x="788" y="155" fill="#ffe8a0" font-size="42" text-anchor="middle">東</text>
-          <text x="1120" y="465" fill="#ffe8a0" font-size="42" text-anchor="middle">南</text>
-          <text x="800" y="770" fill="#ffe8a0" font-size="42" text-anchor="middle">西</text>
-          <text x="480" y="465" fill="#ffe8a0" font-size="42" text-anchor="middle">北</text>
-        </g>
-
-        <g filter="url(#shadow)">
-          <g transform="translate(210 188) rotate(-13)">
-            <rect width="112" height="156" rx="14" fill="#fff5dc"/>
-            <rect x="9" y="9" width="94" height="138" rx="10" fill="none" stroke="#d4b36e" stroke-width="3"/>
-            <text x="56" y="105" text-anchor="middle" font-size="76" fill="#a51624">🀄</text>
-          </g>
-          <g transform="translate(1290 245) rotate(12)">
-            <rect width="112" height="156" rx="14" fill="#fff5dc"/>
-            <rect x="9" y="9" width="94" height="138" rx="10" fill="none" stroke="#d4b36e" stroke-width="3"/>
-            <text x="56" y="105" text-anchor="middle" font-size="76" fill="#1d6b3a">🀅</text>
-          </g>
-          <g transform="translate(300 640) rotate(8)">
-            <rect width="112" height="156" rx="14" fill="#fff5dc"/>
-            <rect x="9" y="9" width="94" height="138" rx="10" fill="none" stroke="#d4b36e" stroke-width="3"/>
-            <text x="56" y="105" text-anchor="middle" font-size="76" fill="#222">🀇</text>
-          </g>
-          <g transform="translate(1190 635) rotate(-9)">
-            <rect width="112" height="156" rx="14" fill="#fff5dc"/>
-            <rect x="9" y="9" width="94" height="138" rx="10" fill="none" stroke="#d4b36e" stroke-width="3"/>
-            <text x="56" y="105" text-anchor="middle" font-size="76" fill="#256c45">🀙</text>
-          </g>
-        </g>
-
-        <g text-anchor="middle">
-          <text x="800" y="214" fill="#d9ad55" font-size="32" letter-spacing="11">FREE COMPANY SPECIAL EVENT</text>
-          <text x="800" y="365" fill="url(#gold)" font-size="118" font-weight="900" letter-spacing="22">晨曦茶會</text>
-          <text x="800" y="505" fill="url(#gold)" font-size="132" font-weight="900" letter-spacing="24">麻將大賽</text>
-          <text x="800" y="575" fill="#fff0b2" font-size="34" letter-spacing="19">MAHJONG CHAMPIONSHIP</text>
-          <line x1="510" y1="620" x2="1090" y2="620" stroke="#d9ad55" stroke-width="2" opacity=".8"/>
-          <text x="800" y="680" fill="#fff6e4" font-size="45" letter-spacing="9">06 / 14　20:00</text>
-          <text x="800" y="740" fill="#c8b08a" font-size="32" letter-spacing="8">公會門口集合｜6桌積分前四高進入決賽</text>
-        </g>
-
-        <g transform="translate(1135 415) rotate(-12)" filter="url(#shadow)">
-          <circle cx="0" cy="0" r="72" fill="#8d1b29" stroke="#fff0b2" stroke-width="4"/>
-          <text x="0" y="-9" text-anchor="middle" fill="#fff0b2" font-size="31" font-weight="900">雀王</text>
-          <text x="0" y="30" text-anchor="middle" fill="#fff0b2" font-size="31" font-weight="900">決定戰</text>
-        </g>
-      </svg>
+  <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div><div class="bubble b4"></div>
+  <div class="hero-card">
+    <div class="hero-tag">FREE COMPANY SUMMER SPECIAL EVENT</div>
+    <h1>晨曦茶會<span>夏日祭</span></h1>
+    <p class="hero-sub">麻將、歌聲與七夕命運轉盤，<br>一起把夏夜變成最熱鬧的公會回憶。</p>
+    <div class="date-pill"><span>📅 8 / 16（週日）</span><span>🕘 21:00 START</span></div>
+    <div class="hero-actions">
+      <a href="#signup" class="btn btn-primary">我要報名</a>
+      <a href="#mahjong" class="btn btn-secondary">查看活動內容</a>
     </div>
   </div>
 </header>
 
 <main>
-  <section id="info" class="info">
-    <div><small>DATE</small><strong>06/14</strong><span>20:00 開始</span></div>
-    <div><small>PLACE</small><strong>公會門口</strong><span>提前 10 分鐘集合</span></div>
-    <div><small>PLAYER</small><strong>24 人</strong><span>六桌同步開戰</span></div>
-    <div><small>SYSTEM</small><strong>4 取 1</strong><span>積分前四名晉級最終決賽</span></div>
-  </section>
+  <div class="overview">
+    <article><small>MAHJONG</small><strong>16 人麻將大賽</strong><span>4 組 × 每組 4 人</span></article>
+    <article><small>DC SINGING</small><strong>限額 10 位</strong><span>參加即贈 G17 武器箱</span></article>
+    <article><small>QIXI SPECIAL</small><strong>命運轉盤</strong><span>粉色 / 紅色 Dress Code</span></article>
+  </div>
 
-
-  <section class="apply-section">
-    <a href="https://forms.gle/kRg6SFGxonEVwgph7" target="_blank" rel="noopener" class="apply-btn">✦ 我要報名 ✦</a>
-  </section>
-
-  <section>
-    <div class="section-title"><small>COUNTDOWN</small><h2>距離活動開始</h2></div>
-    <div class="countdown">
-      <div><b id="days">00</b><span>天</span></div><div><b id="hours">00</b><span>時</span></div>
-      <div><b id="minutes">00</b><span>分</span></div><div><b id="seconds">00</b><span>秒</span></div>
+  <section id="mahjong" class="section">
+    <div class="section-head"><small>01 · MAHJONG TOURNAMENT</small><h2>🀄 FF14 晨曦茶會公會麻將大賽</h2></div>
+    <div class="mahjong-grid">
+      <div class="event-card">
+        <h3>活動資訊</h3>
+        <ul>
+          <li>時間：晚上 21:00</li>
+          <li>人數：16 人，分 4 組，每組 4 人</li>
+          <li>每組第一名晉級決賽</li>
+          <li>共 4 位晉級者進入最終決賽</li>
+        </ul>
+      </div>
+      <div class="event-card">
+        <h3>賽事獎勵</h3>
+        <div class="reward-box"><b>每組第一名</b>G17 幻夢武器箱</div>
+        <div class="reward-box"><b>最終決賽冠軍</b>商城服飾一套，可自由選擇</div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="section-title"><small>RULE</small><h2>賽制規則</h2></div>
-    <div class="rules">
-      <article><h3>第一場</h3><p>24 名參賽者分為 6 桌，每桌 4 人進行對局。</p><b>6桌取積分最高的前4位晉級決賽</b></article>
-      <article><h3>第二場</h3><p>由第一場6桌積分前4高的進行最終比賽，共 4 名選手同桌對決。</p><b>決出最終勝者</b></article>
-      <article><h3>獎勵</h3><p>第一場各桌第一名的6位可獲得 G17 武器箱子；最終勝者可獲得海島沙漠玫瑰角笛。</p><b>獎勵依成績發放（同分時比獲得第1名的次數或總順位點，細節當天公布）</b></article>
-    </div>
-  </section>
-
-  <section id="players">
-    <div class="section-title"><small>PLAYER LIST</small><h2>參賽名單</h2></div>
+  <section id="players" class="section">
+    <div class="section-head"><small>PLAYER LIST</small><h2>麻將大賽參賽名單</h2></div>
     <div class="players">
-      <div><em>01</em>瓦特洛栩</div><div><em>02</em>綾小路</div><div><em>03</em>酒館玲阿桃</div><div><em>04</em>筆筆</div>
-      <div><em>05</em>蒼蓮</div><div><em>06</em>在回憶迷失者</div><div><em>07</em>璃小星</div><div><em>08</em>淵宿</div>
-      <div><em>09</em>Romron</div><div><em>10</em>不羈龍蛇蘭</div><div><em>11</em>害惡細菌</div><div><em>12</em>璟庠鼠</div>
-      <div><em>13</em>繁星雨</div><div><em>14</em>水寒</div><div><em>15</em>古菇骨</div><div><em>16</em>糖炒栗子</div>
-      <div><em>17</em>Revia</div><div><em>18</em>映月</div><div><em>19</em>莉莉醬</div><div><em>20</em>貓糰子</div>
-      <div><em>21</em>鴨沒肉ˋ狗狗</div><div><em>22</em>娜芙蒂蒂</div><div><em>23</em>噠噠丼</div><div><em>24</em>無限暢銷</div>
+      <div><em>01</em>待填寫</div><div><em>02</em>待填寫</div><div><em>03</em>待填寫</div><div><em>04</em>待填寫</div>
+      <div><em>05</em>待填寫</div><div><em>06</em>待填寫</div><div><em>07</em>待填寫</div><div><em>08</em>待填寫</div>
+      <div><em>09</em>待填寫</div><div><em>10</em>待填寫</div><div><em>11</em>待填寫</div><div><em>12</em>待填寫</div>
+      <div><em>13</em>待填寫</div><div><em>14</em>待填寫</div><div><em>15</em>待填寫</div><div><em>16</em>待填寫</div>
     </div>
   </section>
 
-  <section id="schedule">
-    <div class="section-title"><small>SCHEDULE</small><h2>賽程表</h2></div>
-    <div class="timeline">
-      <div class="item"><b>19:50</b><strong>報到集合</strong><span>公會門口集合，確認參賽者與分桌。</span></div>
-      <div class="item"><b>20:00</b><strong>開場說明</strong><span>說明活動流程、賽制與獎勵內容。</span></div>
-      <div class="item"><b>20:10</b><strong>第一場</strong><span>24 人分為 6 桌，取積分前四高晉級第二場。</span></div>
-      <div class="item"><b>21:00</b><strong>第二場</strong><span>由第一場積分最高 4 位選手進行最終比賽。</span></div>
-      <div class="item"><b>21:50</b><strong>頒獎合照</strong><span>最終勝者頒獎，公會門口拍攝紀念照。</span></div>
+  <section id="singing" class="section">
+    <div class="section-head"><small>02 · DC SINGING EVENT</small><h2>🎤 DC 唱歌活動</h2></div>
+    <div class="singing">
+      <div class="icon-block"><div><div class="emoji">🎤</div><strong>當天同步舉辦</strong></div></div>
+      <div class="event-card">
+        <h3>活動方式</h3>
+        <p>想唱就唱，來 DC 一起熱鬧一下！</p>
+        <div class="reward-box"><b>報名參加者｜限 10 位</b>每位贈送 G17 武器箱</div>
+      </div>
     </div>
   </section>
 
-  <section id="ranking">
-    <div class="section-title"><small>REWARD</small><h2>獎勵內容</h2></div>
-    
-<div class="ranking" style="grid-template-columns:repeat(2,1fr);">
+  <section id="love" class="section love-theme">
+    <div class="section-head"><small>03 · QIXI SPECIAL EVENT</small><h2>❤️ 七夕特別活動 – 命運轉盤</h2></div>
+    <div class="love-grid">
+      <article><h3>Dress Code</h3><p>穿著 <b>粉色</b> 或 <b>紅色</b> 出席。</p><div class="color-dots"><div class="dot pink"></div><div class="dot red"></div></div></article>
+      <article><h3>參加資格</h3><p>一般與會觀眾皆可參加，非麻將參賽者也沒問題。</p></article>
+      <article><h3>命運轉盤</h3><p>顏色選對的觀眾，可參加轉盤抽獎。</p></article>
+    </div>
+    <div class="event-card" style="margin-top:18px">
+      <h3>🎁 獎品項目｜共 10 份</h3>
+      <p>5 個「彈性皮帶」<br>5 個「分光性染劑」</p>
+    </div>
+  </section>
 
-  <div class="rank">
-    <small>FIRST ROUND REWARD</small>
-    <b>第一場各桌第一名</b>
-    <span>G17 武器箱子</span>
-  </div>
-
-  <div class="rank">
-    <small>FINAL WINNER</small>
-    <b>最終勝者獎勵</b>
-    <span>海島沙漠玫瑰角笛</span>
-  </div>
-
-</div>
-</section>
+  <section id="signup" class="section form-panel">
+    <div class="section-head"><small>REGISTRATION</small><h2>活動報名</h2></div>
+    <p>點擊下方按鈕前往 Google 表單。<br>只需要在程式碼最下方，把 Google 表單網址貼進去一次即可。</p>
+    <a href="#" id="signupBtn" class="btn btn-primary">前往 Google 表單</a>
+    <div class="form-note">程式碼內搜尋「GOOGLE_FORM_URL」即可快速修改報名網址。</div>
+  </section>
 </main>
 
 <footer>
-  <p>晨曦茶香之中，六桌開局，雀運將決定最終勝者。</p>
-  <strong>06/14 20:00｜公會門口見</strong>
+  <p>夏風、牌桌、歌聲與七夕。</p>
+  <strong>8 / 16 晚上 21:00｜晨曦茶會見</strong>
 </footer>
 
 <script>
-const eventDate = new Date("2026-06-14T20:00:00+08:00").getTime();
-function pad(n){return String(n).padStart(2,"0")}
-function tick(){
-  let diff = eventDate - Date.now();
-  if(diff < 0) diff = 0;
-  document.getElementById("days").textContent = pad(Math.floor(diff/86400000));
-  document.getElementById("hours").textContent = pad(Math.floor(diff/3600000)%24);
-  document.getElementById("minutes").textContent = pad(Math.floor(diff/60000)%60);
-  document.getElementById("seconds").textContent = pad(Math.floor(diff/1000)%60);
-}
-tick(); setInterval(tick,1000);
+const GOOGLE_FORM_URL = "請把你的 Google 表單網址貼在這裡";
+document.getElementById("signupBtn").addEventListener("click", function(e){
+  e.preventDefault();
+  if (GOOGLE_FORM_URL.startsWith("http")) {
+    window.open(GOOGLE_FORM_URL, "_blank", "noopener");
+  } else {
+    alert("尚未設定 Google 表單網址。請在 HTML 最下方搜尋 GOOGLE_FORM_URL，貼上你的表單連結。");
+  }
+});
 </script>
 </body>
 </html>
